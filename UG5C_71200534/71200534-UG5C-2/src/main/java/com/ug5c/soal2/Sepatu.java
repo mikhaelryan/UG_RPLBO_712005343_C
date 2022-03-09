@@ -1,9 +1,8 @@
 package com.ug5c.soal2;
 
 public class Sepatu {
-    private static int counter = 0;
     private String kode;
-    private int nextNUm;
+    private static int nextNUM = 0;
     private String merkModel;
     private int ukuran;
     private long harga;
@@ -34,7 +33,7 @@ public class Sepatu {
         this.ukuran = ukuran;
         this.harga = harga;
         this.stok = stok;
-        this.kode = "NK0024510" + ++this.counter;
+        this.kode = "NK0024510" + ++this.nextNUM;
     }
 
 
