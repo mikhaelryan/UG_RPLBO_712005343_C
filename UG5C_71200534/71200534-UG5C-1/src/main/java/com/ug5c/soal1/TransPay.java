@@ -28,6 +28,9 @@ public class TransPay {
     public void topUp(long jumlah){
         if (jumlah > 0){
             this.setSaldo(this.saldo+jumlah);
+            System.out.println("Top up sebesar "+jumlah+" berhasil");
+        } else {
+            System.out.println("nominal anda tidak valid! nominal harus lebih dari 0");
         }
     }
 
