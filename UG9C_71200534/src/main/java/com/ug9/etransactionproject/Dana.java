@@ -21,7 +21,7 @@ public class Dana extends MobileWallet{
                 dp.setSaldo(dp.getSaldo()+nominal);
                 printBuktiTransfer(dp,nominal);
             }else{
-                super.setSaldo(getSaldo()-(nominal+super.getFeeTransferBank()));
+                super.setSaldo(getSaldo()-(nominal));
                 dp.setSaldo(dp.getSaldo()+nominal);
                 printBuktiTransfer(dp,nominal);
             }

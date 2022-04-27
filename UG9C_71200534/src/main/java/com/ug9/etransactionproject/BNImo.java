@@ -6,7 +6,7 @@ public class BNImo extends MobileBanking{
     }
 
     public void transfer(DigitalPayment dp, long nominal){
-        if(dp instanceof BRImo){
+        if(dp instanceof BNImo){
             super.setCheckFee(true);
         }if (nominal<0){
             System.out.println("input tidak valid");
