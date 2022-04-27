@@ -27,6 +27,10 @@ public class MobileBanking extends DigitalPayment {
             super.setSaldo(super.getSaldo()-(this.feeAntarBank+nominal));
             dp.setSaldo(dp.getSaldo()+nominal);
             printBuktiTransfer(dp,nominal);
+        }else{
+            super.setSaldo(super.getSaldo()-(nominal));
+            dp.setSaldo(dp.getSaldo()+nominal);
+            printBuktiTransfer(dp,nominal);
         }
     }
 
