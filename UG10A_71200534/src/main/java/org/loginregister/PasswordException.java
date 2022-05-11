@@ -3,9 +3,22 @@ package org.loginregister;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PasswordException extends User{
-    public PasswordException(String username, String email, String password) {
-        super(username, email, password);
+public class PasswordException extends Exception{
+    private int code;
+    private String message;
+    public PasswordException(int code){
+        super();
+        this.code=code;
+        if (code==1) {
+            this.message="minimal 7 digit";
+        }else if(code==2){
+            this.message="Password minimal harus\n" +
+                    "mengandung 1 karakter huruf\n" +
+                    "kecil, huruf besar, simbol, dan\n" +
+                    "angka";
+        }else if(code==3){
+            this.message="password tidak boleh sama dengan username";
+        }
     }
 
     public boolean check(String password){
@@ -32,27 +45,4 @@ public class PasswordException extends User{
         }
     }
 
-    public boolean konfirmasipassword(String konfirmasi){
-        if (konfirmasi!=super.getPassword()){
-            return false;
-        }else{
-            return true;
-        }
-    }
-
-    public void checkpassword(){
-            if ((super.getPassword().length()) < 7) {
-                throw new ArithmeticException("Minimal 7 digit");
-            }
-            if (check(super.getPassword())){
-                throw new ArithmeticException("Password minimal harus\n" +
-                        "mengandung 1 karakter huruf\n" +
-                        "kecil, huruf besar, simbol, dan\n" +
-                        "angka");
-            }
-            if(super.getPassword()==super.getUsername()){
-                throw new ArithmeticException("password tidak boleh sama dengan username");
-            }
-
-    }
 }

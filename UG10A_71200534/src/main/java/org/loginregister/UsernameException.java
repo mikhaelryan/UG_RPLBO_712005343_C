@@ -1,6 +1,6 @@
 package org.loginregister;
 
-public class UsernameException extends Throwable {
+public class UsernameException extends Exception {
     private int code;
     private String message;
 

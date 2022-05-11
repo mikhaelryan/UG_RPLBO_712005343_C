@@ -3,11 +3,12 @@ package org.loginregister;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EmailException extends User{
+public class EmailException extends Exception{
     private int code;
     private String message;
 
     public EmailException(int code){
+        super();
         this.code=code;
         if (code==1) {
             this.message="email tidak boleh kosong";

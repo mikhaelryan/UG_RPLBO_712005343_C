@@ -1,6 +1,8 @@
 package org.loginregister;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class App 
 {
@@ -27,6 +29,12 @@ public class App
             try{
                 if (email.isEmpty()){
                     throw new EmailException(1);
+                }
+                String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher= pattern.matcher(email);
+                else if(matcher.matches()){
+                    throw new EmailException(2);
                 }
             }catch(Exception e){
                 System.out.println("error");
