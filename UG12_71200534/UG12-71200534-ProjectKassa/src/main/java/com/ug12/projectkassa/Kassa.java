@@ -38,10 +38,10 @@ public class Kassa {
         System.out.println("Kasir: "+this.kasir.getNama());
         System.out.println("No.\tNama barang\tJumlah\tHarga\tSub Total");
         int i=0;
-        for(Map.Entry<Produk, Integer> set:pesanan.entrySet()){
+        for(HashMap.Entry<Produk, Integer> ind:pesanan.entrySet()){
             i++;
-            System.out.println(i+"\t"+set.getKey().getNama()+"\t"+set.getValue()+"\t"+set.getKey().getHarga()+"\t"+set.getKey().getHarga()*set.getValue());
-            this.kasir.setTotalPenjualan(this.kasir.getTotalPenjualan()+set.getKey().getHarga()*set.getValue());
+            System.out.println(i+"\t"+ind.getKey().getNama()+"\t"+ind.getValue()+"\t"+ind.getKey().getHarga()+"\t"+ind.getKey().getHarga()*ind.getValue());
+            this.kasir.setTotalPenjualan(this.kasir.getTotalPenjualan()+ind.getKey().getHarga()*ind.getValue());
         }
         pesanan.clear();
     }
