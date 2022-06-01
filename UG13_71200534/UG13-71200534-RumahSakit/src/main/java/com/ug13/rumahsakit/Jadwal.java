@@ -8,6 +8,22 @@ public class Jadwal {
     private Boolean statusDaftar=false;
     private Boolean statusScreening=false;
 
+    public void setPasien(Pasien pasien) {
+        this.pasien = pasien;
+    }
+
+    public void setDokter(Dokter dokter) {
+        this.dokter = dokter;
+    }
+
+    public void setSuster(Suster suster) {
+        this.suster = suster;
+    }
+
+    public void setPelayanan(Pelayanan pelayanan) {
+        this.pelayanan = pelayanan;
+    }
+
     public Pasien getPasien() {
         return pasien;
     }

@@ -12,6 +12,8 @@ public class Pelayanan{
     public void mengaturJadwal(Pasien p, Dokter d, Jadwal j){
         if(p.getStatus()=="sakit"){
             j.setStatusDaftar(true);
+            j.setPasien(p);
+            j.setDokter(d);
             System.out.println("proses penjadwalan berhasil");
         };
     }

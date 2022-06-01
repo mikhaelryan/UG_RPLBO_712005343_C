@@ -15,7 +15,6 @@ public class Dokter {
     }
 
     public void memeriksa(Pasien p, Jadwal j){
-
         if(j.getStatusScreening()==true) {
             if (p.getLevelPenyakit() > 0) {
                 p.setLevelPenyakit(p.getLevelPenyakit() - 1);
@@ -30,15 +29,23 @@ public class Dokter {
         }else{
             System.out.println("anda harus melakukan pendaftaraan terlebih dahulu di bagian pelayanan!");
         }
-
+        Dokter obj=new Dokter(this.nama,this.spesialis,this.ruangan);
         try{
-            Dokter obj=new Dokter(this.nama,this.spesialis,this.ruangan);
+
             FileOutputStream fileOutput=new FileOutputStream("memeriksa.txt");
             ObjectOutputStream Output = new ObjectOutputStream(fileOutput);
 
             Output.writeObject(obj);
             Output.close();
         }catch(IOException e) {
+
+        }
+        try{
+            FileInputStream fileIn = new FileInputStream("memeriksa.txt");
+            ObjectInputStream input = new ObjectInputStream(fileIn);
+
+            obj=(Dokter)input.readObject();
+        }catch(Exception e) {
 
         }
 
